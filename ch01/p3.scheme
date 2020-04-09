@@ -1,0 +1,10 @@
+(define (sum-of-biggers a b c)
+	(cond ((and (< a b) (< a c)) (+ b c))
+	      ((and (< b a) (< b c)) (+ a c))
+		  (else (+ a b)))
+)
+
+(define (sum-of-biggers-v2 a b c)
+  (if (< a b)
+      (+ b (if (< a c) c a))
+      (+ a (if (< b c) c a))))
